@@ -1,12 +1,12 @@
 # Dashboard Power BI Embedado + Refresh Automático
 
-Este projeto consiste em uma página HTML simples que **embuta (embed)** um dashboard do Power BI via `iframe` e o **recarrega automaticamente a cada 3 minutos**, mantendo o conteúdo do painel atualizado mesmo em um site estático hospedado no GitHub Pages.
+Este projeto consiste em uma página HTML simples que **embuta (embed)** um dashboard do Power BI via `iframe` e o **recarrega automaticamente a cada 3 horas**, mantendo o conteúdo do painel atualizado mesmo em um site estático hospedado no GitHub Pages.
 
 ## O que esse código faz
 
 - Renderiza um iframe apontando para a URL de visualização de um relatório do Power BI (`https://app.powerbi.com/view?r=...`).
 - Ajusta automaticamente o tamanho do iframe para preencher 100% da altura da tela, evitando cortes no topo e no rodapé.
-- Aplica um **refresh automático a cada 3 minutos** (180.000 ms), forçando o recarregamento do iframe sem atualizar a página inteira.
+- Aplica um **refresh automático a cada 3 horas** (10.800.000 ms), forçando o recarregamento do iframe sem atualizar a página inteira.
 - É pensado para funcionar diretamente no **GitHub Pages** (sem backend), apenas com arquivos estáticos (`index.html`).
 
 ## Como usar
@@ -15,7 +15,7 @@ Este projeto consiste em uma página HTML simples que **embuta (embed)** um dash
 2. Habilite o GitHub Pages em **Settings → Pages**, apontando o source para a branch `main` e pasta `/root`.
 3. Acesse o dashboard pela URL gerada, por exemplo:  
    `https://andrade-gabriel-urbam.github.io/dashboard-grupourbam`
-4. O dashboard do Power BI será recarregado **a cada 3 minutos** enquanto a página estiver aberta.
+4. O dashboard do Power BI será recarregado **a cada 3 horas** enquanto a página estiver aberta.
 
 ---
 
@@ -49,7 +49,7 @@ function ajustar() {
 ajustar();
 window.addEventListener("resize", ajustar);
 
-// reload do iframe a cada 3 minutos (180.000 ms)
+// reload do iframe a cada 3 horas (10.800.000 ms)
 const srcOriginal = document.getElementById("powerbi").src;
 setInterval(() => {
     const iframe = document.getElementById("powerbi");
@@ -57,7 +57,7 @@ setInterval(() => {
     setTimeout(() => {
         iframe.src = srcOriginal; // volta a URL original
     }, 100);
-}, 180000);
+}, 10800000);
 </script>
 
 </body>
