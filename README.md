@@ -2,6 +2,8 @@
 
 ## Documento Técnico Expandido (Versão Detalhada)
 
+📄 [Abrir versão completa em PDF](https://github.com/andrade-gabriel-urbam/refact_environment_data/blob/main/plano_modernizacao_engenharia_dados.pdf)
+
 Período do projeto: **Abril até Dezembro (ano corrente)**\
 Escopo: Modernização completa da estrutura de dados, migração de
 sistemas legados e criação de um Data Lake + Data Warehouse escalável na
